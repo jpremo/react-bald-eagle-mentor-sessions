@@ -78,6 +78,10 @@ export const breedInfo = [
     { id: "ycho", name: "York Chocolate" },
 ];
 
+export const getCatInfo = () => {
+    return randomArr(breedInfo);
+};
+
 export const getCatBreed = () => {
     const breed = randomArr(breedInfo);
     return breed.id;
