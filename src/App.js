@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from "react";
+import ListItem from "./list-item";
+
+const pets = ["dog", "cat", "fish"];
 
 function App() {
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // useState returns an array [stateVariable, setterFunction]
+    const [selectedPet, setSelectedPet] = useState('Gerbil');
+    const inputHandler = (event) => {
+      console.log(event.target.value);
+    }
+    const handlePetChange = (newPet) => {
+      setSelectedPet(newPet);
+    }
+    console.log('rendering')
+    return (
+        <div style={{ textAlign: "center" }}>
+            <div>Selected Pet: {selectedPet}</div>
+            <input
+                type="number"
+                onChange={inputHandler}
+            />
+            {pets.map((pet) => {
+                return <ListItem title={pet} name="Bubbles" onButtonClick={handlePetChange}/>;
+            })}
+        </div>
+    );
 }
 
 export default App;
