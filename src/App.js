@@ -1,16 +1,12 @@
 import React from 'react';
+import Form from './form/form';
+import Preview from './preview/preview';
 
 function App() {
   return (
     <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <Form/>
+      <Preview/>
     </div>
   );
 }
