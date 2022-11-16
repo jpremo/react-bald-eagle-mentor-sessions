@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Preview = () => {
+const Preview = ({ title, genre, imageUrl }) => {
     return (
         <div>
-            Preview
+            <h1>{title}</h1>
+            <img src={imageUrl}/>
+            <p>{genre}</p>
         </div>
     );
 };
