@@ -1,0 +1,12 @@
+.garden-card {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.garden-card img {
+    height: 50%;
+    border-radius: 10px;
+}
