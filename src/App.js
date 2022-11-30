@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import GardenCard from './garden-card/garden-card'
 import './app.css'
 
@@ -41,17 +41,43 @@ const PlantInfo = [
   },
 ]
 
+const useLogVariable = (stateVariable) => {
+  useEffect(() => {
+    console.log('gardenPlantList', stateVariable)
+  }, [stateVariable])
+}
+
 function App() {
+  const [gardenName, setGardenName] = useState('Test Garden');
+  const [gardenPlantList, setGardenPlantList] = useState(PlantInfo);
+  const handleNameChange = (event) => {
+    setGardenName(event.target.value);
+  }
+
+  useLogVariable(gardenPlantList);
+  useLogVariable(gardenName);
+
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Garden Planning</h1>
+      <h2>My garden's name: {gardenName}</h2>
       <div className="card-wrapper">
-        {PlantInfo.map((info) => {
+        {gardenPlantList.map((info, idx) => {
           return (
-            <GardenCard name={info.name} numberPlanted={info.numberPlanted} src={info.src} gardenBed={info.gardenBed}/>
+            <GardenCard 
+              key={info.name} 
+              setGardenPlantList={setGardenPlantList} 
+              gardenPlantList={gardenPlantList}
+              plantIndex={idx} 
+              name={info.name} 
+              numberPlanted={info.numberPlanted} 
+              src={info.src} 
+              gardenBed={info.gardenBed}
+            />
           )
         })}
       </div>
+      <input placeholder="Garden Name" value={gardenName} onChange={handleNameChange}/>
     </div>
   );
 }
