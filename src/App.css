@@ -1,0 +1,16 @@
+.container {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+    margin: 10px;
+}
+
+.alternate-children {
+    color: white;
+}
+
+.half-width {
+    width: 50%;
+}
