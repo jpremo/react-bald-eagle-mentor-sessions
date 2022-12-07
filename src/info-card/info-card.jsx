@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const InfoCard = ({ title, description, imgSrc }) => {
+const InfoCard = ({ title, children }) => {
     return (
         <div className="info-card">
             <h1>{title}</h1>
-            <img src={imgSrc}/>
-            <p>{description}</p>
+            {children}
         </div>
     );
 };

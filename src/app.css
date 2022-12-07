@@ -6,7 +6,7 @@
     margin: 1rem;
 }
 
-.info-card img {
+.info-card img, .info-card video {
     height: 50%;
     border-radius: 10px;
 }
