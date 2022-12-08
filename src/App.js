@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import RandomCatCard from './random-cat-card/random-cat-card';
+import './app.css';
 
 function App() {
   return (

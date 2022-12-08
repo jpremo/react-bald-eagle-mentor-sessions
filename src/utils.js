@@ -88,19 +88,23 @@ export const getCatBreed = () => {
 };
 
 export const getCatImage = async (breed) => {
-    const res = await fetch(
-        `https://api.thecatapi.com/v1/images/search?breed_ids=${breed}`,
-        {
-            headers: {
-                "Content-Type": "application/json",
-                "x-api-key": "b07ebe63-3b58-4285-a374-10aa6a74e158",
-            },
-            method: "GET",
+    try {
+        const res = await fetch(
+            `https://api.thecatapi.com/v1/images/search?breed_ids=${breed}`,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-api-key": "b07ebe63-3b58-4285-a374-10aa6a74e158",
+                },
+                method: "GET",
+            }
+        );
+        const data = await res.json();
+        if (data[0]) {
+            return {url: data[0].url, description: data[0].breeds[0].description};
         }
-    );
-    const data = await res.json();
-    if (data[0]) {
-        return data[0].url;
+    } catch (e) {
+        console.log('we have an error', e)
     }
     return "https://image.freepik.com/free-vector/404-error-web-template-with-mad-cat_23-2147763345.jpg";
 };
