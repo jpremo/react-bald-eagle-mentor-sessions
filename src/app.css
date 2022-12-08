@@ -1,0 +1,9 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.card-img {
+    width: 80%;
+}
