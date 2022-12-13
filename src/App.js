@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Goal is to fetch a cat after specifying a breed in a dropdown
 function App() {
   return (
     <div style={{ textAlign: 'center' }}>
