@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {getCatPictureAsync, getCatPicturePromiseChaining} from './testing'
 
-//Goal is to fetch a cat after specifying a breed in a dropdown
 function App() {
+  useEffect(() => {
+    getCatPicturePromiseChaining()
+  }, [])
   return (
     <div style={{ textAlign: 'center' }}>
       <header>
