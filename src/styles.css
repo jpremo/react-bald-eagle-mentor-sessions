@@ -1,0 +1,15 @@
+.fact-card {
+    padding: 30px;
+    width: 300px;
+    border: 2px solid black;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.fact-card img {
+    width: 100%;
+}
+
+.card-container {
+    display: flex;
+}

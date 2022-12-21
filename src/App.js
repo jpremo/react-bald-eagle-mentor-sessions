@@ -1,16 +1,18 @@
 import React from 'react';
+import FactCard from './fact-card';
+import './styles.css';
+//1. set up an endpoint to get a random cat fact
+//2. setup 3-5 cards each with a load random fact button
+//3. load result into a state variable
 
 function App() {
   return (
     <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <div className="card-container">
+        <FactCard/>
+        <FactCard/>
+        <FactCard/>
+      </div>
     </div>
   );
 }

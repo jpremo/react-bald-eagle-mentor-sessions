@@ -108,3 +108,9 @@ export const getCatImage = async (breed) => {
 export const getRandomCatImage = async () => {
     return await getCatImage(getCatBreed());
 }
+
+export const getRandomCatFact = async () => {
+    const result = await fetch('https://catfact.ninja/fact');
+    const data = await result.json();
+    return data;
+}
