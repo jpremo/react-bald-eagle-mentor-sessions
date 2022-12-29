@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Joke = ({ punchline, setup }) => {
+    const [punchlineVisible, setPunchlineVisible] = useState(false);
     return (
         <div>
             <h3>{setup}</h3>
-            <div>{punchline}</div>
+            <button onClick={() => setPunchlineVisible(!punchlineVisible)}>{punchlineVisible ? 'Hide Punchline' : 'Reveal Punchline'}</button>
+            {punchlineVisible &&
+                <div>{punchline}</div>
+            }
         </div>
     );
 };

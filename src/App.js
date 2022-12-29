@@ -14,7 +14,7 @@ import './styles.css';
   // 3. For the jokes API specifically, filter out unnecessary data and focus on punchline and setup
     // this could be done with react children
   // 4. Loading indicator should not hide cached results
-  
+  // 5. Filter responses
 function App() {
   return (
     <div>
@@ -22,10 +22,16 @@ function App() {
         title="Get Random Joke"
         fetchUrl="https://official-joke-api.appspot.com/random_joke"
         RenderingComponent={Joke}
+        filterFunction={(searchTerm) => (joke) => {
+          return joke.setup.toLowerCase().includes(searchTerm) || joke.punchline.toLowerCase().includes(searchTerm);
+        }}
       />
       <APIRoute
         title="Get Random User"
         fetchUrl="https://randomuser.me/api/"
+        filterFunction={(searchTerm) => (user) => {
+          return user.results[0].name.first.toLowerCase().includes(searchTerm) || user.results[0].name.last.toLowerCase().includes(searchTerm);
+        }}
       />
       <APIRoute
         title="Get Random Dog Picture Link"

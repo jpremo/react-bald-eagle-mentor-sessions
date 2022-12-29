@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-const Dog = ({ message }) => {
+const Dog = ({ message, data }) => {
     return (
-        <img src={message}/>
+        <img src={data.message}/>
     );
 };
 
